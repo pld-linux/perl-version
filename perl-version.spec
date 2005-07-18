@@ -7,13 +7,13 @@
 Summary:	version - Perl extension for Version Objects
 Summary(pl):	version - rozszerzenie Perla dla obiektów wersji
 Name:		perl-version
-Version:	0.42
+Version:	0.43
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/J/JP/JPEACOCK/%{pdir}-%{version}.tar.gz
-# Source0-md5:	f2e97a7d82d5351d97854106be9f9c4c
+# Source0-md5:	b7019cfb344c0f51e8e127e04eb134c3
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -35,18 +35,17 @@ Perla 5.10.0, z wyj±tkiem automatycznego tworzenia obiektu wersji.
 %setup -q -n %{pdir}-%{version}
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make} \
-	OPTIMIZE="%{rpmcflags}"
+%{__perl} Build.PL \
+	destdir=$RPM_BUILD_ROOT \
+	installdirs=vendor
+./Build
 
-%{?with_tests:%{__make} test}
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+./Build install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
