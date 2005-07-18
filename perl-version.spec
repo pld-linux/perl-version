@@ -15,6 +15,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/J/JP/JPEACOCK/%{pdir}-%{version}.tar.gz
 # Source0-md5:	b7019cfb344c0f51e8e127e04eb134c3
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-Module-Build
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl(Test::More) >= 0.45
