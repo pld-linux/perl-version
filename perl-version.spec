@@ -7,13 +7,13 @@
 Summary:	version - Perl extension for Version Objects
 Summary(pl):	version - rozszerzenie Perla dla obiektów wersji
 Name:		perl-version
-Version:	0.43
+Version:	0.44
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/J/JP/JPEACOCK/%{pdir}-%{version}.tar.gz
-# Source0-md5:	b7019cfb344c0f51e8e127e04eb134c3
+# Source0-md5:	fa6501a5569072777c3834536ea8ac8c
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-Module-Build
 BuildRequires:	rpm-perlprov >= 4.1-13
