@@ -7,15 +7,15 @@
 Summary:	version - Perl extension for Version Objects
 Summary(pl):	version - rozszerzenie Perla dla obiektów wersji
 Name:		perl-version
-Version:	0.44
+Version:	0.53
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/J/JP/JPEACOCK/%{pdir}-%{version}.tar.gz
-# Source0-md5:	fa6501a5569072777c3834536ea8ac8c
-BuildRequires:	perl-devel >= 1:5.8.0
+# Source0-md5:	34ed42d9ce88edcf1478394d57b28ec2
 BuildRequires:	perl-Module-Build
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl(Test::More) >= 0.45
@@ -48,6 +48,9 @@ rm -rf $RPM_BUILD_ROOT
 
 ./Build install
 
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/version/vxs/.packlist
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/version.pod
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -56,6 +59,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %{perl_vendorarch}/*.pm
 %dir %{perl_vendorarch}/auto/version
-%{perl_vendorarch}/auto/version/*.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/version/*.so
+%dir %{perl_vendorarch}/auto/version/vxs
+%{perl_vendorarch}/auto/version/vxs/vxs.bs
+%attr(755,root,root)    %{perl_vendorarch}/auto/version/vxs/vxs.so
+%{perl_vendorarch}/version/vxs.pm
 %{_mandir}/man3/*
