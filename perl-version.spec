@@ -7,8 +7,8 @@
 Summary:	version - Perl extension for Version Objects
 Summary(pl):	version - rozszerzenie Perla dla obiektów wersji
 Name:		perl-version
-Version:	0.63
-Release:	2
+Version:	0.68
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
