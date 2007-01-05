@@ -57,10 +57,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorarch}/*.pm
+
+%dir %{perl_vendorarch}/version
 %dir %{perl_vendorarch}/auto/version
 %dir %{perl_vendorarch}/auto/version/vxs
-%{perl_vendorarch}/auto/version/vxs/vxs.bs
+
 %attr(755,root,root)    %{perl_vendorarch}/auto/version/vxs/vxs.so
+%{perl_vendorarch}/*.pm
+%{perl_vendorarch}/auto/version/vxs/vxs.bs
 %{perl_vendorarch}/version/vxs.pm
+
 %{_mandir}/man3/*
