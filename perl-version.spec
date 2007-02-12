@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	version
 Summary:	version - Perl extension for Version Objects
-Summary(pl):	version - rozszerzenie Perla dla obiektów wersji
+Summary(pl.UTF-8):   version - rozszerzenie Perla dla obiektÃ³w wersji
 Name:		perl-version
 Version:	0.68
 Release:	2
@@ -27,10 +27,10 @@ Overloaded version objects for all versions of Perl. This module
 implements all of the features of version objects which will be part
 of Perl 5.10.0 except automatic version object creation.
 
-%description -l pl
-Przeci±¿one obiekty wersji dla wszystkich wersji Perla. Ten modu³
-implementuje wszystkie mo¿liwo¶ci obiektów wersji, które bêd± czê¶ci±
-Perla 5.10.0, z wyj±tkiem automatycznego tworzenia obiektu wersji.
+%description -l pl.UTF-8
+PrzeciÄ…Å¼one obiekty wersji dla wszystkich wersji Perla. Ten moduÅ‚
+implementuje wszystkie moÅ¼liwoÅ›ci obiektÃ³w wersji, ktÃ³re bÄ™dÄ… czÄ™Å›ciÄ…
+Perla 5.10.0, z wyjÄ…tkiem automatycznego tworzenia obiektu wersji.
 
 %prep
 %setup -q -n %{pdir}-%{version}
