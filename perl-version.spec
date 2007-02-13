@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	version
 Summary:	version - Perl extension for Version Objects
-Summary(pl.UTF-8):   version - rozszerzenie Perla dla obiektów wersji
+Summary(pl.UTF-8):	version - rozszerzenie Perla dla obiektów wersji
 Name:		perl-version
 Version:	0.68
 Release:	2
