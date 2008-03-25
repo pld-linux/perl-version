@@ -14,6 +14,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/J/JP/JPEACOCK/%{pdir}-%{version}.tar.gz
 # Source0-md5:	f4601fef731ad3cc4c70a59d496ff7f4
+URL:		http://search.cpan.org/dist/version/
 BuildRequires:	perl-ExtUtils-CBuilder
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
