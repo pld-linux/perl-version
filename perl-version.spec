@@ -7,14 +7,14 @@
 Summary:	version - Perl extension for Version Objects
 Summary(pl.UTF-8):	version - rozszerzenie Perla dla obiektów wersji
 Name:		perl-version
-Version:	0.85
+Version:	0.88
 Release:	1
 Epoch:		1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/J/JP/JPEACOCK/%{pdir}-%{version}.tar.gz
-# Source0-md5:	2d61141383a8e7fcda295a5416dc87db
+# Source0-md5:	5f27f21c625fa2f89f4130e277594635
 URL:		http://search.cpan.org/dist/version/
 BuildRequires:	perl-ExtUtils-CBuilder
 BuildRequires:	perl-Module-Build
@@ -39,20 +39,20 @@ Perla 5.10.0, z wyjątkiem automatycznego tworzenia obiektu wersji.
 %setup -q -n %{pdir}-%{version}
 
 %build
-%{__perl} Build.PL \
-	destdir=$RPM_BUILD_ROOT \
-	installdirs=vendor
-./Build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
 
-%{?with_tests:./Build test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install
+%{__make} pure_install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/version/vxs/.packlist
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/version.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/version/Internals.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/version.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -70,4 +70,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/auto/version/vxs/vxs.bs
 %{perl_vendorarch}/version/vxs.pm
 
-%{_mandir}/man3/*
+%{_mandir}/man3/version*.3pm*
