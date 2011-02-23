@@ -17,11 +17,10 @@ Source0:	http://www.cpan.org/modules/by-authors/id/J/JP/JPEACOCK/%{pdir}-%{versi
 # Source0-md5:	5f27f21c625fa2f89f4130e277594635
 URL:		http://search.cpan.org/dist/version/
 BuildRequires:	perl-ExtUtils-CBuilder
-BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(Test::More) >= 0.45
+BuildRequires:	perl-Test-Simple >= 0.45
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -60,14 +59,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-
+%{perl_vendorarch}/version.pm
 %dir %{perl_vendorarch}/version
+%{perl_vendorarch}/version/vxs.pm
 %dir %{perl_vendorarch}/auto/version
 %dir %{perl_vendorarch}/auto/version/vxs
-
-%attr(755,root,root)    %{perl_vendorarch}/auto/version/vxs/vxs.so
-%{perl_vendorarch}/*.pm
+%attr(755,root,root) %{perl_vendorarch}/auto/version/vxs/vxs.so
 %{perl_vendorarch}/auto/version/vxs/vxs.bs
-%{perl_vendorarch}/version/vxs.pm
-
 %{_mandir}/man3/version*.3pm*
