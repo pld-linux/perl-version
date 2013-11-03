@@ -1,20 +1,20 @@
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
-#
+
+%define		pdir	version
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	version
 Summary:	version - Perl extension for Version Objects
 Summary(pl.UTF-8):	version - rozszerzenie Perla dla obiektów wersji
 Name:		perl-version
-Version:	0.9902
+Version:	0.9903
 Release:	1
 Epoch:		1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/version/%{pdir}-%{version}.tar.gz
-# Source0-md5:	edb0ac88be8bed3e370ce12e74261998
+# Source0-md5:	000887583fc149857d97ae3f11309018
 URL:		http://search.cpan.org/dist/version/
 BuildRequires:	perl-ExtUtils-CBuilder
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -62,6 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %{perl_vendorarch}/version.pm
 %dir %{perl_vendorarch}/version
+%{perl_vendorarch}/version/vpp.pm
 %{perl_vendorarch}/version/vxs.pm
 %dir %{perl_vendorarch}/auto/version
 %dir %{perl_vendorarch}/auto/version/vxs
