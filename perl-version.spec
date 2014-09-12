@@ -67,5 +67,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/version
 %dir %{perl_vendorarch}/auto/version/vxs
 %attr(755,root,root) %{perl_vendorarch}/auto/version/vxs/vxs.so
-%{perl_vendorarch}/auto/version/vxs/vxs.bs
 %{_mandir}/man3/version*.3pm*
