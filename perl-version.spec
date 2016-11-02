@@ -7,14 +7,14 @@
 Summary:	version - Perl extension for Version Objects
 Summary(pl.UTF-8):	version - rozszerzenie Perla dla obiektów wersji
 Name:		perl-version
-Version:	0.9912
-Release:	4
+Version:	0.9917
+Release:	1
 Epoch:		1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/version/%{pdir}-%{version}.tar.gz
-# Source0-md5:	404a7174f3e38e4f8fad3e1eefce5412
+# Source0-md5:	2f43d77d529818caed72995f37789e9b
 URL:		http://search.cpan.org/dist/version/
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.17
 BuildRequires:	perl-ExtUtils-CBuilder
